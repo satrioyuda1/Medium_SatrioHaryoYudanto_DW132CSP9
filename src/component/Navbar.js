@@ -8,33 +8,32 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import '../App.css';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    border:'none',
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1
-  },
+const useStyles = makeStyles((theme) => ({
+	root: {
+		flexGrow: 1,
+		border: 'none'
+	},
+	menuButton: {
+		marginRight: theme.spacing(2)
+	},
+	title: {
+		flexGrow: 1
+	}
 }));
 
 export default function ButtonAppBar() {
-  const classes = useStyles();
+	const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-       <AppBar position="static" color='inherit'>
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Medium
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-  </div>
-  );
+	return (
+		<div className={classes.root}>
+			<AppBar position='static' color='inherit'>
+				<Toolbar>
+					<Typography variant='h6' className={classes.title}>
+						Medium
+					</Typography>
+					<Button color='inherit'>Login</Button>
+				</Toolbar>
+			</AppBar>
+		</div>
+	);
 }
-

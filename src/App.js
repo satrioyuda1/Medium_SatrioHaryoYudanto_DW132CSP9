@@ -9,6 +9,7 @@ import {
 import Register from './pages/Register';
 import Coba from './pages/Coba'
 import Login from './pages/Login';
+import CategoryPage from './pages/CategoryPage';
 
 import Home from './pages/Home';
 class App extends Component {
@@ -29,6 +30,9 @@ class App extends Component {
           </Route>
           <Route path='/home'>
           <Home/>
+          </Route>
+          <Route path='/category_page'>
+          <CategoryPage/>
           </Route>
           
         </Switch>
