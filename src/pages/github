@@ -1,0 +1,100 @@
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (master)
+$ git checkout -b 1.categorypage
+fatal: A branch named '1.categorypage' already exists.
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (master)
+$ git checkout 1.categorypage
+Switched to branch '1.categorypage'
+M       src/App.js
+M       src/component/Navbar.js
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (1.categorypage)
+$ git push origin 1.categorypage
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for '1.categorypage' on GitHub by visiting:
+remote:      https://github.com/satrioyuda1/Medium_SatrioHaryoYudanto_DW132CSP9/pull/new/1.categorypage
+remote:
+To https://github.com/satrioyuda1/Medium_SatrioHaryoYudanto_DW132CSP9.git
+ * [new branch]      1.categorypage -> 1.categorypage
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (1.categorypage)
+$ git status
+On branch 1.categorypage
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/App.js
+        modified:   src/component/Navbar.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        src/pages/CategoryPage.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (1.categorypage)
+$ git add .
+warning: LF will be replaced by CRLF in src/App.js.
+The file will have its original line endings in your working directory
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (1.categorypage)
+$ git commit -m "halaman kategori"
+[1.categorypage ce98fc5] halaman kategori
+ 3 files changed, 51 insertions(+), 25 deletions(-)
+ create mode 100644 src/pages/CategoryPage.js
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (1.categorypage)
+$ git push origin 1.categorypage
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 1.18 KiB | 402.00 KiB/s, done.
+Total 8 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To https://github.com/satrioyuda1/Medium_SatrioHaryoYudanto_DW132CSP9.git
+   575c169..ce98fc5  1.categorypage -> 1.categorypage
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (1.categorypage)
+$ git status
+On branch 1.categorypage
+nothing to commit, working tree clean
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (1.categorypage)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (master)
+$ git pull 1.categorypage
+fatal: '1.categorypage' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (master)
+$ git pull origin 1.categorypage
+From https://github.com/satrioyuda1/Medium_SatrioHaryoYudanto_DW132CSP9
+ * branch            1.categorypage -> FETCH_HEAD
+Updating 575c169..ce98fc5
+Fast-forward
+ src/App.js                |  4 ++++
+ src/component/Navbar.js   | 49 +++++++++++++++++++++++------------------------
+ src/pages/CategoryPage.js | 23 ++++++++++++++++++++++
+ 3 files changed, 51 insertions(+), 25 deletions(-)
+ create mode 100644 src/pages/CategoryPage.js
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/satrioyuda1/Medium_SatrioHaryoYudanto_DW132CSP9.git
+   575c169..ce98fc5  master -> master
+
+Lenovo@DESKTOP-9RVUD4T MINGW64 /d/medium (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
