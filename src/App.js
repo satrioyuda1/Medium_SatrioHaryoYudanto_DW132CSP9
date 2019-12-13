@@ -6,7 +6,8 @@ import Coba from './pages/Coba';
 import Login from './pages/Login';
 import CategoryPage from './pages/CategoryPage';
 import ArticleDetails from './pages/ArticleDetails';
-
+import Follow from './component/Follow';
+import Comment from './pages/Comment';
 import Home from './pages/Home';
 class App extends Component {
 	render() {
@@ -14,22 +15,28 @@ class App extends Component {
 			<Router>
 				<Switch>
 					<Route exact path='/'>
-						<Register />
+						<Home />
 					</Route>
 					<Route exact path='/login'>
 						<Login />
 					</Route>
+					<Route path='/register'>
+						<Register />
+					</Route>
 					<Route exact path='/coba'>
 						<Coba />
-					</Route>
-					<Route path='/home'>
-						<Home />
 					</Route>
 					<Route path='/category_page'>
 						<CategoryPage />
 					</Route>
 					<Route path='/article_details'>
 						<ArticleDetails />
+					</Route>
+					<Route path='/follow'>
+						<Follow />
+					</Route>
+					<Route path='/comment'>
+						<Comment />
 					</Route>
 				</Switch>
 			</Router>

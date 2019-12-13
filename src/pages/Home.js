@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { width } from '@material-ui/system';
 import { Typography, Link, List, ListItem, ListItemText, Container } from '@material-ui/core';
 import Navbar from '../component/Navbar';
 import Category from '../component/Category';
