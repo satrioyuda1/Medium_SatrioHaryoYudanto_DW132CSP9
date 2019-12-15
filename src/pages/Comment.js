@@ -145,7 +145,6 @@ class Comment extends Component {
 										to='/profile'
 										style={{
 											fontFamily: 'Roboto Condensed',
-											color: '#000',
 											textDecoration: 'none',
 											fontSize: 16,
 											color: '#03a87c'

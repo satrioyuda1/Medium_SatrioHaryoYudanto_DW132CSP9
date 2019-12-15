@@ -7,8 +7,11 @@ import Login from './pages/Login';
 import CategoryPage from './pages/CategoryPage';
 import ArticleDetails from './pages/ArticleDetails';
 import Follow from './component/Follow';
+import Footer from './component/Footer';
 import Comment from './pages/Comment';
 import Home from './pages/Home';
+import RelatedArticles from './component/RelatedArticles';
+
 class App extends Component {
 	render() {
 		return (
@@ -37,6 +40,12 @@ class App extends Component {
 					</Route>
 					<Route path='/comment'>
 						<Comment />
+					</Route>
+					<Route path='/related_articles'>
+						<RelatedArticles />
+					</Route>
+					<Route path='/footer'>
+						<Footer />
 					</Route>
 				</Switch>
 			</Router>

@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import Header from '../component/Navbar';
-import { Grid, Typography, Container, Button, Link, Card, CardMedia, CardActionArea, Avatar } from '@material-ui/core';
+import {
+	Grid,
+	Typography,
+	Container,
+	Button,
+	Link,
+	Card,
+	CardMedia,
+	CardActionArea,
+	Avatar,
+	Divider
+} from '@material-ui/core';
 import { Twitter, Facebook } from '@material-ui/icons';
+import RelatedArticles from '../component/RelatedArticles';
+import Footer from '../component/Footer';
 const Author = [
 	{
 		image: 'https://source.unsplash.com/random',
@@ -19,7 +32,66 @@ class ArticleDetails extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			buttonStatus: 'Follow'
+			buttonStatus: 'Follow',
+			articleDetailData: [
+				{
+					imageBanner: 'https://unsplash.it/640/425',
+					title: '5 Ways to animate a React app.',
+					description: 'A 1,000-person WhatsApp community keeps delivery workers safe',
+					author: 'Dimitry Nozhoneko',
+					authorDesc: 'Data Science Analyst',
+					authorImage: 'https://miro.medium.com/fit/c/48/48/2*Ehb1DhSlrQ0stBPyREjQhQ.jpeg',
+					postDate: 'Jan 28, 2019',
+					minRead: 10,
+					content:
+						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar purus sed lorem convallis, vitae dignissim sem molestie. In in congue leo. Nulla ante massa, luctus non faucibus vel, congue vel eros. Donec sit amet urna ut libero ultrices ultrices in quis metus. Etiam et venenatis risus. Pellentesque odio lacus, auctor eu est ac, scelerisque porta lorem. Curabitur dapibus dui et purus suscipit, sed malesuada lectus tempor. Proin sit amet rutrum nibh, non sodales lectus. Nullam tincidunt, massa eget luctus vulputate, nisl augue lacinia sapien, eu dapibus risus nunc ac nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean sodales massa augue, at rhoncus velit ultrices ultrices. Aliquam erat volutpat. Donec auctor convallis lacus, eget porta nisl tincidunt vel. Etiam sit amet ultricies tellus. Donec scelerisque molestie sollicitudin. Aliquam mollis arcu eu nisl laoreet venenatis. Ut odio dolor, rutrum a enim vel, elementum lacinia ex. Phasellus euismod non enim id mollis. Nulla semper pharetra blandit. Phasellus erat nisi, ullamcorper non urna a, vehicula tempor lorem. Sed aliquam nisl et magna dictum, quis venenatis felis mattis. Aliquam ac est pellentesque dui ultricies sodales sit amet sed neque Praesent eget ipsum nibh. Duis ex metus, gravida eu ante sit amet, vulputate mattis ex. Vestibulum id dolor sed libero mollis tincidunt auctor non erat. Sed lacinia congue neque, at ultricies quam hendrerit sed. Maecenas at mi sagittis, rutrum lacus ac, facilisis massa. Nulla varius vel elit eget accumsan. Duis blandit neque eget leo convallis, a varius tellus elementum. Vivamus lobortis iaculis viverra. Sed vel magna bibendum, aliquet velit quis, ornare odio. Pellentesque non mauris quis ex commodo porttitor. Quisque tincidunt urna non varius sollicitudin. Cras nec sapien sem. Aliquam eget tortor id enim ornare suscipit ut id arcu. Nulla suscipit dui at massa tincidunt rutrum. Nullam interdum lorem sapien, id facilisis nunc pellentesque fringilla. Maecenas vel turpis vitae lorem ullamcorper elementum sed at tellus Etiam vehicula mauris turpis. Ut hendrerit hendrerit mollis. Donec urna justo, convallis at pulvinar nec, suscipit et ipsum. Nulla blandit, nulla vitae laoreet viverra, libero ex rutrum ligula, vitae facilisis elit lorem at enim. Cras lacinia urna quis libero lobortis ultricies. Praesent vitae velit varius, pharetra eros vitae, pretium elit. Donec non nulla ut nisi imperdiet feugiat ullamcorper quis sapien. Vivamus quis sem ac odio aliquam viverra. Proin fringilla neque vel facilisis pellentesque. Mauris iaculis turpis neque, vel consectetur mi maximus vel. Proin auctor sagittis metus, et ultrices diam placerat non Fusce placerat felis ligula, at elementum lacus consequat sed. Proin nec ultricies magna, vitae sagittis felis. Etiam pharetra ultricies elit eget aliquet. Sed lectus nulla, pretium eu euismod vitae, congue sed neque. Sed tincidunt arcu ut eros vestibulum, vel ultricies nulla vestibulum. In hac habitasse platea dictumst. Maecenas nec gravida purus. Nullam mollis vitae ligula a pellentesque.',
+					articleTags: [ 'Science', 'Computer Science', 'Database' ],
+					clapsCount: 165,
+					totalResponse: 300
+				}
+			],
+			relatedArticleList: [
+				{
+					title: "The Greatest sales Deck I've ever",
+					urlLink: '/detail',
+					data: {
+						author: 'Corin Faife',
+						authorImage: 'https://miro.medium.com/fit/c/80/80/0*iEQwbVyv5_kVkgrt.jpeg',
+						articleLocation: 'Science',
+						postDate: '21 Sept, 2019',
+						minRead: 7,
+						backgroundArticleImage: 'https://miro.medium.com/max/2400/1*t3Wa9vvDYU5SyoGEmagy4g.jpeg',
+						totalClaps: 40,
+						color: '#3E3E3E'
+					}
+				},
+				{
+					title: 'The Forgotten Pixel Art Masterpieces of the PlayStation 1 Era',
+					urlLink: '/detail',
+					data: {
+						author: 'Richmond Lee',
+						authorImage: 'https://miro.medium.com/fit/c/80/80/2*dWrUdg-uHDB2js5QSp00Uw.jpeg',
+						articleLocation: 'Art',
+						postDate: '21 Sept, 2019',
+						minRead: 7,
+						backgroundArticleImage: 'https://miro.medium.com/max/1024/1*uNgmHEUZHeBejN0JKd_m8A.gif',
+						totalClaps: 40
+					}
+				},
+				{
+					title: 'Why Tesla’s Cybertruck Might Flop',
+					urlLink: '/detail',
+					data: {
+						author: 'tesla bro',
+						authorImage: 'https://miro.medium.com/fit/c/80/80/2*r2KdhFRi_SZ4WAkMDjIVxA.jpeg',
+						articleLocation: 'Otomitif',
+						postDate: '21 Sept, 2019',
+						minRead: 7,
+						backgroundArticleImage: 'https://miro.medium.com/max/1240/1*zqunB7dJ_9nfILbdiACziQ.png',
+						totalClaps: 40
+					}
+				}
+			]
 		};
 	}
 
@@ -229,8 +301,39 @@ class ArticleDetails extends Component {
 								</Grid>
 							</Grid>
 						))}
+						<div
+							style={{
+								display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'center',
+								backgroundColor: '#FFF',
+								color: '#5E5E5E',
+								padding: '40px 60px'
+							}}>
+							<h3>More from medisuuuuuuuuuuuu</h3>
+							<Divider light style={{ marginTop: '0px', marginBottom: '40px' }} />
+							<Grid container spacing={5}>
+								{this.state.relatedArticleList.map((relatedArticleData) => (
+									<Grid item sm={4}>
+										<RelatedArticles
+											title={relatedArticleData.title}
+											url={relatedArticleData.urlLink}
+											author={relatedArticleData.data.author}
+											authorImage={relatedArticleData.data.authorImage}
+											articleLocation={relatedArticleData.data.articleLocation}
+											postDate={relatedArticleData.data.postDate}
+											minRead={relatedArticleData.data.minRead}
+											backgroundArticleImage={relatedArticleData.data.backgroundArticleImage}
+											totalClaps={relatedArticleData.data.totalClaps}
+											color={relatedArticleData.data.color}
+										/>
+									</Grid>
+								))}
+							</Grid>
+						</div>
 					</Container>
 				</Container>
+				<Footer />
 			</div>
 		);
 	}
